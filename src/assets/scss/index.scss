@@ -12,99 +12,45 @@
   .bg {
     width: 100%;
     height: 100%;
-    padding: 0 16px;
+    padding: 0 52px;
     background-image: url("../assets/pageBg.png");
     background-size: cover;
     background-position: center center;
   }
 
   .host-body {
-    .icon {
-      width: 400px;
-      background: #fff;
-      margin-right: 50px;
-    }
-    .title {
-      position: relative;
-      width: 800px;
-      height: 80px;
-      line-height: 80px;
-      text-align: left;
-
-      .title-text {
-        font-size: 30px;
+    &>.titleBox {
+      height: 73px;
+      .icon {
+        width: 140px;
+        background: url("../assets/icon.png") 0 50% no-repeat;
+        margin-right: 10px;
       }
-    }
-    .text {
-      height: 80px;
-      line-height: 80px;
-      text-align: left;
-      font-size: 30px;
-      text-align: right;
-    }
-    // 第二行
-    .aside-width {
-      width: 40%;
-    }
-    .react-r-s,
-    .react-l-s {
-      background-color: #0f1325;
-    }
-
-    // 平行四边形
-    .react-right {
-      font-size: 18px;
-      width: 300px;
-      line-height: 50px;
-      text-align: center;
-      transform: skewX(-45deg);
-    }
-
-    .react-left {
-      &.react-l-s {
-        width: 500px;
+      .title {
+        position: relative;
+        height: 73px;
+        line-height: 73px;
         text-align: left;
+        .title-text {
+          font-size: 26px;
+          font-family: "zihun143-zhengkuchaojihei";
+        }
       }
-      font-size: 18px;
-      width: 300px;
-      height: 50px;
-      line-height: 50px;
-      text-align: center;
-      transform: skewX(45deg);
-      background-color: #0f1325;
-
-      .react-before {
-        position: absolute;
-        left: -25px;
-        top: 0;
-        height: 50px;
-        width: 50px;
-        background-color: #0f1325;
-        transform: skewX(-45deg);
-      }
-
       .text {
-        display: inline-block;
-        transform: skewX(-45deg);
+        height: 80px;
+        line-height: 80px;
+        text-align: left;
+        font-size: 30px;
+        text-align: right;
       }
     }
-
     .body-box {
-      margin-top: 16px;
-      display: flex;
-      flex-direction: column;
-
-      //下方区域的布局
-      .content-box {
-        display: grid;
-        grid-template-columns: 2fr 3fr 5fr 3fr 2fr;
-      }
-
-      // 底部数据
-      .bototm-box {
-        margin-top: 10px;
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
+      position: relative;
+      .left-box {
+        width: 30%;
+        height: 966px;
+        position: absolute;
+        padding: 20px;
       }
     }
   }

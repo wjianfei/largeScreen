@@ -3,36 +3,30 @@
     <div class="bg">
       <dv-loading v-if="loading">Loading...</dv-loading>
       <div v-else class="host-body">
-        <div class="d-flex jc-between">
+        <div class="d-flex jc-between titleBox">
           <div class="d-flex jc-center">
-            <div class="icon">img</div>
-          </div>
-          <div class="d-flex jc-center">
+            <div class="icon"></div>
             <div class="title">
-              <span class="title-text">武钢厂区道路及车辆环保监测</span>
+              <span class="title-text">厂区道路及车辆环保监测</span>
             </div>
           </div>
           <div class="d-flex">
               <span class="text">{{ dateYear }} {{ dateWeek }} {{ dateDay }}</span>
           </div>
         </div>
-
-        <!-- 第二行 -->
-        <div class="d-flex jc-between px-2">
-        </div>
         <div class="body-box">
-          <!-- 第三行数据 -->
-          <div class="content-box">
+          <!-- 左侧栏 -->
+          <div class="left-box">
+            <LeftBox />
           </div>
-          <!-- 第四行数据 -->
-          <div class="bototm-box">
-            <dv-border-box-13>
-              <bottomLeft />
-            </dv-border-box-13>
-            <dv-border-box-12>
-              <bottomRight />
-            </dv-border-box-12>
+          <!-- 搜索 -->
+          <div class="search-box">
           </div>
+          <!-- 右下角图层控件 -->
+          <div class="search-box">
+          </div>
+        </div>
+        <div class="bottom-box">
         </div>
       </div>
     </div>
@@ -40,15 +34,9 @@
 </template>
 
 <script>
-import drawMixin from "../utils/drawMixin";
+import drawMixin from "../utils/drawMixin"
 import { formatTime } from '../utils/index.js'
-// import centerLeft1 from './centerLeft1'
-// import centerLeft2 from './centerLeft2'
-// import centerRight1 from './centerRight1'
-// import centerRight2 from './centerRight2'
-// import center from './center'
-import bottomLeft from './bottomLeft'
-import bottomRight from './bottomRight'
+import LeftBox from './leftBox'
 
 export default {
   mixins: [ drawMixin ],
@@ -68,8 +56,7 @@ export default {
     // centerRight1,
     // centerRight2,
     // center,
-    bottomLeft,
-    bottomRight
+    LeftBox
   },
   mounted() {
     this.timeFn()

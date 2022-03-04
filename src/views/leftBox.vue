@@ -22,7 +22,7 @@ export default {
 <style lang="scss" scoped>
 $box-height: 520px;
 $box-width: 100%;
-#leftBox {
+// #leftBox {
   
-}
+// }
 </style>

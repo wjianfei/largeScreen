@@ -1,5 +1,6 @@
 <template>
   <div id="index" ref="appRef">
+    <div class="mapBox" v-if="!loading"><img src="../assets/bg.jpeg" alt=""></div>
     <div class="bg">
       <dv-loading v-if="loading">Loading...</dv-loading>
       <div v-else class="host-body">
@@ -11,7 +12,21 @@
             </div>
           </div>
           <div class="d-flex">
-              <span class="text">{{ dateYear }} {{ dateWeek }} {{ dateDay }}</span>
+            <div class="timeBox">
+              <p class="time">{{ dateDay }}</p>
+              <p class="text">{{ dateYear }} {{ dateWeek }}</p>
+            </div>
+            <div class="weather">
+              <p class="day">阴天</p>
+              <p class="temperature">10-12℃</p>
+            </div>
+            <div class="address">
+              <div class="addressName">武汉</div>
+              <div class="rightBox">
+                <p>PM 2.5</p>
+                <p>128</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="body-box">
@@ -21,13 +36,15 @@
           </div>
           <!-- 搜索 -->
           <div class="search-box">
-          </div>
-          <!-- 右下角图层控件 -->
-          <div class="search-box">
+            <SearchBox /> 
           </div>
         </div>
         <div class="bottom-box">
         </div>
+      </div>
+      <!-- 右下角图层控件 -->
+      <div class="layer-box">
+        <LayerBox /> 
       </div>
     </div>
   </div>
@@ -37,6 +54,8 @@
 import drawMixin from "../utils/drawMixin"
 import { formatTime } from '../utils/index.js'
 import LeftBox from './leftBox'
+import SearchBox from './searchBox'
+import LayerBox from './layerBox'
 
 export default {
   mixins: [ drawMixin ],
@@ -47,16 +66,13 @@ export default {
       dateDay: null,
       dateYear: null,
       dateWeek: null,
-      weekday: ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+      weekday: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
     }
   },
   components: {
-    // centerLeft1,
-    // centerLeft2,
-    // centerRight1,
-    // centerRight2,
-    // center,
-    LeftBox
+    LeftBox,
+    SearchBox,
+    LayerBox
   },
   mounted() {
     this.timeFn()
